@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/script.js"></script>
+    <script src="/script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/334f53df79.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/style.css" />
     <title>Library</title>
   </head>
@@ -17,10 +21,19 @@
         <button class="add">+ Add Book</button>
         <div class="cards"></div>
       </div>
-      <div class="footer">This is my footer</div>
+      <div class="footer">
+        Copyright ©
+        <script>
+          document.writeln(new Date().getFullYear());
+        </script>
+        Leuchtend
+        <a href="https://github.com/leuchtend5">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
       <div class="form-add">
         <h1>Add New Book</h1>
-        <form id="my-form" action="" method="post">
+        <form id="my-form">
           <input
             type="text"
             name="title"
@@ -28,6 +41,7 @@
             placeholder="Title"
             required
           />
+          <div class="error"></div>
           <input
             type="text"
             name="author"
@@ -41,14 +55,14 @@
             id="pages"
             placeholder="Pages"
             required
-            pattern="[0-9]"
+            pattern="\d+"
           />
           <div class="isread">
             <label for="read">Have you read it</label>
             <input type="checkbox" name="read" id="read" />
           </div>
         </form>
-        <button type="submit" form="my-form">Submit</button>
+        <button type="submit" form="my-form" id="submit">Submit</button>
       </div>
       <div class="overlay"></div>
     </div>
